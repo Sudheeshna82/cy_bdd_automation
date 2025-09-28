@@ -1,0 +1,42 @@
+{
+    "name": "cy-bdd-automation",
+    "version": "1.0.0",
+    "description": "Cypress + Cucumber BDD + TypeScript + Allure + Page Object Model",
+    "main": "index.js",
+    "scripts": {
+        "cypress:open": "cypress open",
+        "cypress-ui:test": "npx cypress run --env TAGS='@ui',ENV=test --headed --browser chrome",
+        "cypress-api:test": "npx cypress run --env TAGS='@api',ENV=test --headless --browser chrome",
+        "cypress-ui:staging": "npx cypress run --env TAGS='@ui',ENV=staging --headed --browser chrome",
+        "cypress-api:staging": "npx cypress run --env TAGS='@api',ENV=staging --headless --browser chrome",
+        "cypress-ui:production": "npx cypress run --env TAGS='@ui',ENV=production --headed --browser chrome",
+        "cypress-api:production": "npx cypress run --env TAGS='@api',ENV=production --headless --browser chrome",
+        "cypress:run:all": "npx cypress run --env TAGS='@ui or @api' --headless --browser chrome && npm run allure:generate && npm run allure:open",
+        "allure:generate": "allure generate allure-results --clean -o allure-report",
+        "allure:open": "npx allure open allure-report"
+    },
+    "keywords": [
+        "cypress",
+        "cucumber",
+        "bdd",
+        "typescript",
+        "allure",
+        "page-object-model"
+    ],
+    "author": "Sudheeshna",
+    "license": "MIT",
+    "dependencies": {
+        "@badeball/cypress-cucumber-preprocessor": "^23.2.0",
+        "@bahmutov/cypress-esbuild-preprocessor": "^2.2.6",
+        "@shelex/cypress-allure-plugin": "^2.41.2",
+        "@bahmutov/cy-api": "^2.2.8",
+        "lodash": "^4.17.21",
+        "@types/node": "^24.5.2",
+        "cypress": "^15.3.0",
+        "cypress-on-fix": "^1.1.0",
+        "fs-extra": "^11.3.2",
+        "prettier": "^3.6.2",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.9.2"
+    }
+}

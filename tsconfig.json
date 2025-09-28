@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "target": "esnext",
+        "lib": ["esnext", "dom"],
+        "module": "NodeNext",
+        "moduleResolution": "nodenext",
+        "types": ["cypress", "node", "@bahmutov/cy-api"],
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "isolatedModules": false,
+        "skipLibCheck": true,
+        "noEmit": true
+    },
+    "include": ["cypress/**/*.ts", "cypress.config.ts"]
+}
